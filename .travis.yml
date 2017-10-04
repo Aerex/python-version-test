@@ -11,5 +11,4 @@ install:
   - pip install --upgrade bumpversion
 # command to run tests
 script:
-  - nosetests
   - ./publish.sh
