@@ -10,5 +10,4 @@ python:
 install:
   - pip install --upgrade bumpversion
 # command to run tests
-script:
-  - ./publish.sh
+script: ./publish.sh
