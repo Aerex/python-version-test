@@ -21,7 +21,7 @@ if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]]; then
         git checkout -- .
         isPatch=$(echo ${TRAVIS_COMMIT_MESSAGE} | grep "fix")
         isMinor=$(echo ${TRAVIS_COMMIT_MESSAGE} | grep "feat")
-        isMajor=$(echo ${TRAVIS_COMMIT_MESSAGE} | grep "BREAKING CHANGE"
+        isMajor=$(echo ${TRAVIS_COMMIT_MESSAGE} | grep "BREAKING CHANGE")
         currentVersion = $(python -c "print(open('setup.py').read().split('\n')[3].split('='))[1]")
         if [[ "$isPatch" ]]; then
             echo bumpversion --list  --allow-dirty --current-version $currentVersion patch setup.py
