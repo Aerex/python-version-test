@@ -19,6 +19,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
         git config user.name "${USER_NAME}"
 
         git checkout -- .
+        git checkout -b increment-version
         currentVersion=$(python -c "print(open('setup.py').read().split('\n')[3].split('='))[1].replace(',','')")
         echo $currentVersion
         if echo "$TRAVIS_COMMIT_MESSAGE" | grep -q "fix" ; then
