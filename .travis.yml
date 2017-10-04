@@ -8,7 +8,6 @@ python:
   - "3.6"
 # command to install dependencies
 install:
-  - python setup.py install
   - pip install --upgrade bumpversion
 # command to run tests
 script:
