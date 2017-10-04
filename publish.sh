@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ev
 
-if [[ "${TRAVIS_PULL_REQUEST}" = "false" ]]; then
+if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
     echo "Not a PR"
 
     # on development branch, we want to auto increment package patch version number
