@@ -20,7 +20,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
         git checkout -- .
         currentVersion=$(python -c "print(open('setup.py').read().split('\n')[3].split('='))[1].replace(',','')")
-        echo currentVersion
+        echo $currentVersion
         if echo "$TRAVIS_COMMIT_MESSAGE" | grep -q "fix" ; then
             bumpversion --list --allow-dirty --current-version $currentVersion patch setup.py
         elif echo "$TRAVIS_COMMIT_MESSAGE" | grep -q "feat" ; then
@@ -29,7 +29,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
             bumpversion --list --allow-dirty --current-version $currentVersion major setup.py
         else
             echo "Could not determine version upgrade defaulting to patch"
-            bumpversion --allow-dirty --current-version $currentVersion patch setup.py
+            bumpversion --list --allow-dirty --current-version $currentVersion patch setup.py
         fi
 
         git branch --set-upstream-to origin/development
