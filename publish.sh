@@ -6,7 +6,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
     # on development branch, we want to auto increment package patch version number
     # and push commit back to repo
-    if [[ "${TRAVIS_BRANCH}" = "development" ]]; then
+    if [ "${TRAVIS_BRANCH}" = "development" ]; then
         echo "On branch: development"
         echo "commit message: ${TRAVIS_COMMIT_MESSAGE}"
 
